@@ -1,4 +1,2 @@
-# WebMidiControler
-Configurable Midi Controler in your Webbrowser
-
-Curent Stat: playing around
+# Node Grunt Boilerplate
+Just a simple Boilerplate for starting a new Project with node npm and grunt

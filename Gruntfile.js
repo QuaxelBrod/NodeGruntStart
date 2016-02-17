@@ -12,9 +12,10 @@ module.exports = function(grunt) {
       dist: {
       },
       dev: {
-        cwd: 'src/client/js/',
-        src: ['**'],
-        dest: 'public/js/'
+        expand: true,
+        cwd: 'src/client/',
+        src: '**',
+        dest: 'public/'
       },
       html: {
         expand: true,
@@ -37,7 +38,8 @@ module.exports = function(grunt) {
       },
       public: {
         options: {
-          'force': false
+          'force': false,
+          'no-write': false
         },
         src: ['build/', 'public/**/*']
       }
@@ -53,7 +55,7 @@ module.exports = function(grunt) {
   grunt.registerTask('dist', ['clean:public', 'concat:dist','uglify:dist','copy:dist','copy:html']);
   grunt.registerTask('dev',['clean:public', 'copy:dev','copy:html']);
 
-  grunt.registerTask('default', ['dist']);
+  grunt.registerTask('default', ['dev']);
 
 
 //  grunt.registerTask('default', browserLib);
